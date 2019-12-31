@@ -1,0 +1,60 @@
+Courses Table:-
+SQL> create table courses(
+  Course_ID number(25),
+  Course_names varchar(25),
+  Staff_ID number(25),
+  Student_ID number(25),
+  CONSTRAINT courses_pk PRIMARY KEY(Course_ID,Staff_ID,Student_ID));
+Table created.
+Insert into courses values(201,’Python’,111,1);
+Insert into courses values(202,’AI’,222,1);
+Insert into courses values(203,’ML’,333,2);
+
+
+Students Table:-
+SQL> create table students(
+  Gender varchar(25),
+  first_name varchar(25),
+  last_name varchar(25),
+  Student_ID number(25),
+  Aadhar_no number(25),
+  birth_date DATE,
+  Age number(25),
+  Religion varchar(25),
+ CONSTRAINT students_pk PRIMARY KEY(Student_ID));
+                Table created.
+               Insert into students values(‘F’,’Gunuru’,’Kumari’,1,229611088639,21-Apr-1999,20,Hindu);
+    Insert into students values(‘M’,’Gunuru’,’Naveen’,2,268611088769,20-Jan-1999,19,Hindu);
+
+
+Departments Table:-
+SQL> create table Department(
+  Department_ID number(25),
+  Department_name varchar(25));
+Table created.
+Insert into Department values(100,’Enginering’);
+Insert into Department values(101,’Science’);
+Insert into Department values(102,’Management’);
+
+
+create table parents(
+  father_name varchar(25),
+  mother_name varchar(25),
+  mobile_no number(25),
+  Student_ID NOT NULL,
+  FOREIGN KEY(Student_ID) REFERENCES students(Student_ID));
+         Table created.
+Insert into parents values(‘Naidu’,’Parvathi’, 9457832879,1);
+Insert into parents values(‘Raju’,’Sandhya’, 9457837679,2);
+Insert into parents values(‘Srinu’,’Padmavathi’, 8765832879   ,3);
+
+
+School Table:-
+SQL> create table school (
+Staff_id number(25),
+Staff_name varchar(25),
+Staff_role varchar(25));
+Table created
+Insert into school values(111,’karan’,’prof’);
+Insert into school values(222,’neelam’,’asst.prof’);
+Insert into school values(333,’josh’,’Associate.prof’);
